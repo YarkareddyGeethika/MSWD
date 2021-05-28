@@ -1,0 +1,28 @@
+note over browser:
+ User inputs the data in the text 
+ field and then click the Submit button.
+ end note 
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note right of server:
+The POST request to the address new_note_spa contains
+the new note as JSON-data containing both the content
+of the note and the timestamp:{ content: "Geethika"
+date: "2021-05-26T010:53:46.213Z"}
+end note
+server-->browser: HTML-code
+note left of browser:
+The browser stays on the same page, 
+and it sends no further HTTP requests. 
+end note
+note right of server:
+The server does not ask for a redirect
+end note
+
+note left of server:
+The command document.getElementById('notes_form')
+instructs the code to fetch the form-element from the
+pageto handle the form submit event. The event 
+handler immediately calls the method e.preventDefault()
+handling of form submit
+end note 
